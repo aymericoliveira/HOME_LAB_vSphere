@@ -10,7 +10,7 @@ Mettre en place une solution de sauvegarde et de restauration complète d'une ma
 
 Ce projet n’est **pas un tutoriel**, mais un **retour d’expérience** avec captures d’écran et notes personnelles.
 
----
+
 
 ## 🖥️ Infrastructure du Lab Veeam Backup & Replication
 
@@ -21,7 +21,7 @@ Ce projet n’est **pas un tutoriel**, mais un **retour d’expérience** avec c
 - **VM Windows Server (avec Veeam B&R)** : serveur de sauvegarde  
 - **VM Linux** : VM à sauvegarder/restaurer  
 
----
+
 
 ## 🧱 Étape 1 - Création du stockage LUN iSCSI sur FreeNAS
 
@@ -32,7 +32,7 @@ Une fois la configuration terminée sur FreeNAS, il suffit de monter l'espace di
 ![Montage du disque](./images/veeam_screen/montage_disque_v.png)  
 ![Partitionnement du disque](./images/veeam_screen/partition_disk_iscsi_san.png)
 
----
+
 
 ## 🖧 Étape 2 - Connexion de l’iSCSI à la VM Veeam
 
@@ -45,7 +45,7 @@ Une fois la configuration terminée sur FreeNAS, il suffit de monter l'espace di
 
 ![Connexion iSCSI](./images/veeam_screen/connexion_reseau_veeam_freenass_1.Png)
 
----
+
 
 ## ⚙️ Étape 3 - Installation de Veeam Backup & Replication
 
@@ -57,7 +57,7 @@ Connexion à la console via un compte administrateur disposant des droits néces
 
 ![Accès à la console](./images/veeam_screen/installation_veeam_2.png)
 
----
+
 
 ## 📂 Étape 4 - Ajout du Backup Repository
 
@@ -81,7 +81,7 @@ Résumé de la configuration :
 
 ![Résumé](./images/veeam_screen/repo_ok.png)
 
----
+
 
 ### 🔧 Création du Proxy Veeam
 
@@ -91,7 +91,7 @@ Résumé de la configuration :
 
 > ⚠️ Sans backup proxy, aucune sauvegarde ne peut être effectuée dans Veeam Backup & Replication.
 
----
+
 
 ## 🔗 Étape 5 - Connexion au vCenter dans Veeam
 
@@ -114,7 +114,7 @@ Validation du certificat du vCenter :
 
 ![Validation SSL](./images/veeam_screen/certificat_ssl.png)
 
----
+
 
 ## 💾 Étape 6 - Création d’un Job de Sauvegarde
 
@@ -152,7 +152,7 @@ J’ai opté pour une **sauvegarde incrémentale** après une sauvegarde complè
 ![Sauvegarde terminée](./images/veeam_screen/sauvegarde_full_vm_done.png)  
 ![Sauvegarde terminée (suite)](./images/veeam_screen/sauvegarde_full_vm_done_2.png)
 
----
+
 
 ## 🔁 Étape 7 - Restauration de la VM
 
@@ -180,7 +180,7 @@ Dans l'historique, la VM apparaît bien restaurée :
 
 *(Oui… il m’a fallu quelques essais 😅)*
 
----
+
 
 ## 📝 Conclusion
 

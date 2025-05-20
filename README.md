@@ -6,6 +6,7 @@ home-lab-vsphere/
 ├── README.md                # Présentation principale du lab   
 ├── Architecture.md          # Description de l’architecture du lab (avec schéma)    
 ├── Installation.md          # Installation du lab    
+├── Veeam_backup.md          # Installation et test de Veeam Backup & Replication
 ├── Fonctionnalités          # Options de la disponible sur vCenter    
 │   └── DRS.md               # Retour d'expérience sur DRS (Distributed Resource Scheduler)   
 │   └── HA.md                # Retour d'expérience sur HA (High Availability)   
@@ -13,8 +14,10 @@ home-lab-vsphere/
 │   └── FT.md                # Retour d'expérience sur Fault Tolerence   
 ├── images/                  # Captures d’écran et schémas    
 │   └── DRS_screen           # Capture écran test DNS    
+│   └── FT_screen            # Capture écran test FT
 │   └── HA_screen            # Capture écran test HA  
-│   └── screen_freenas       # Capture écran test DNS    
+│   └── screen_freenas       # Capture écran test DNS 
+│   └── veeam_screen         # Capture écran test veeam  
 │   └── vmotion_screen       # Capture écran test vMotion   
 └── LICENSE                  # License MIT  
 ```
