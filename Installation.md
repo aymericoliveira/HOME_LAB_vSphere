@@ -248,9 +248,6 @@ Dans ce lab, j’utilise **FreeNAS** (ancienne version de TrueNAS) pour émuler 
 Une fois la VM démarrée, j’attribue une **adresse IP fixe** pour l’accès principal : 192.168.180
 
 
-
-
-
 ## 🌐 Configuration Réseau
 
 Je crée deux interfaces réseau distinctes sur FreeNAS pour séparer les protocoles de partage :
@@ -366,7 +363,8 @@ Même procédure, en adaptant :
 <br>
 <br>
 
-# 💾 Montage d’un Datastore iSCSI (LUN)
+### Section cible iscsi
+# 💾 Montage d’un Datastore iSCSI
 
 ## 🎯 Objectif
 
@@ -438,7 +436,6 @@ Une fois le réseau fonctionnel, je vais lier l’adaptateur iSCSI logiciel aux 
    - IP cible : `172.17.10.10`
 
 ### 🔁 Répéter sur ESXi_2 avec les mêmes paramètres
-
 
 
 ## 🏁 Montage du Datastore iSCSI

@@ -28,7 +28,8 @@ home-lab-vsphere/
 
 La virtualisation est au cœur des infrastructures modernes. Elle permet de transformer des ressources physiques en ressources logiques, plus flexibles, modulables et résilientes. Le contexte post-COVID a d’ailleurs renforcé son adoption, avec l’essor du télétravail et des infrastructures distantes.
 
-Dans ce projet personnel, j’ai souhaité créer un **lab de virtualisation complet** en environnement **nested** (virtualisation dans une virtualisation), en utilisant **VMware Workstation** comme base, et la suite **vSphere (ESXi + vCenter)** comme outil principal de gestion.
+Dans ce projet personnel, j’ai souhaité créer un **lab de virtualisation complet** en environnement **nested** (virtualisation dans une virtualisation), en utilisant **VMware Workstation** comme base, et la suite **vSphere (ESXi + vCenter)** comme outil principal de gestion. 
+Pour rendre mon infractructure la plus complète possible, j'ai également souhaité mettre en place un système de sauvegarde et de réstauration. J'ai utilisé **Veeam Backup & Replication** .
 
 
 
@@ -40,6 +41,9 @@ Dans ce projet personnel, j’ai souhaité créer un **lab de virtualisation com
   - **HA** (High Availability)
   - **vMotion**
   - **DRS** (Distributed Resource Scheduler)
+  - **FT** (Fault Tolérance)
+
+Le tout en utilisant **Veeam Backup & Replication** comme solution de sauvegarde et de restauration des données, afin de disposer d'une infrastructure la plus fidèle possible à un environnement professionnel.
 
 Ce projet n’est **pas un tutoriel**, mais un **retour d’expérience** avec captures d’écran, notes personnelles et quelques pièges rencontrés en chemin.
 
@@ -52,6 +56,8 @@ Ce projet n’est **pas un tutoriel**, mais un **retour d’expérience** avec c
 - **vCenter .iso**
 - **FreeNAS / TrueNAS**
 - **VM Linux (Debian)**
+- **VM Windows Serveur pour Veeam Backup & Replication**
+
 
 > ⚠️ Faute de matériel physique, j’ai utilisé la virtualisation nested (ESXi dans VMware Workstation).
 
@@ -59,7 +65,7 @@ Ce projet n’est **pas un tutoriel**, mais un **retour d’expérience** avec c
 
 ## 🖥️ Architecture du Lab
 
-![Architecture du lab](./images/architecture_home_lab_esxi.png)
+![Architecture du lab](./images/architecture_home_lab_add_veeam.png)
 
 Résumé :
 - **VMware Workstation** héberge :
@@ -77,11 +83,12 @@ Résumé :
 ## ⚙️ Configuration matérielle
 
 | Machine   | RAM    | vCPU | Disque(s)                       |
-|-----------|--------|------|----------------------------------|
+|-----------|--------|------|---------------------------------|
 | ESXi_1    | 10 GB  | 2    | 60 GB, 80 GB, 600 GB            |
 | ESXi_2    | 6 GB   | 2    | 60 GB, 100 GB                   |
-| vCenter   | 8      | 2    | 50 GB
+| vCenter   | 8      | 2    | 50 GB                           |
 | FreeNAS   | 1 GB   | 1    | 20 GB, 400 GB, 200 GB           |
+| Veeam     | 4 GB   | 2    | 100 GB                          |
 
 > 📌 Les disques sont en **Thin Provisioning** pour optimiser l’espace.
 
@@ -93,6 +100,7 @@ Résumé :
 - [x] Ajout des hôtes ESXi au vCenter
 - [x] Création de Datastores partagés via FreeNAS (iSCSI / NFS)
 - [x] Activation et test de **vMotion**
+- [x] Simulation d'une coupure système avec un test du **FT**
 - [x] Simulation d’indisponibilité avec test du **HA**
 - [x] Test du **DRS** en surchargeant une VM
 - [x] Mise en place de vSwitch
