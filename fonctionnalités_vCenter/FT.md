@@ -66,9 +66,9 @@ On peut ensuite observer que la fonction **Fault Tolerance** est bien activée s
 <br>
 <br>
 
-![activation_fr](../images/ft_screen/choix_espace_stockage.png)
-![activation_fr](../images/ft_screen/choix_host_vm_secondary.png)
-![activation_fr](../images/ft_screen/installation_secondary_vm_ok.png)
+![activation_fr](../images/FT_screen/choix_espace_stockage.png)
+![activation_fr](../images/FT_screen/choix_host_vm_secondary.png)
+![activation_fr](../images/FT_screen/installation_secondary_vm_ok.png)
 
 
 ## 3. Partie Test
@@ -83,8 +83,8 @@ Résultat :
 <br>
 
 
-![test_ft](../images/ft_screen/after_ft_ESXI1_vm_secondary.png)
-![test_ft](../images/ft_screen/before_ft_ESXI1_vm_primary.png)
+![test_ft](../images/FT_screen/after_ft_ESXI1_vm_secondary.png)
+![test_ft](../images/FT_screen/before_ft_ESXI1_vm_primary.png)
 
 ## 4. Avantages et inconvénients de FT
 
